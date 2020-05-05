@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './Header.css';
 import Button from '@material-ui/core/Button';
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 import Modal from "react-modal";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -15,6 +15,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 const customStyles = {
     content: {
         top: '50%',
+
         left: '50%',
         right: 'auto',
         bottom: 'auto',
