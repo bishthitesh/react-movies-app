@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from '../../common/header/Header';
 import moviesData from '../../common/movieData';
 import Typography from '@material-ui/core/Typography';
@@ -49,11 +49,11 @@ class Details extends Component {
         currentState.movie = moviesData.filter((mov) => {
             return mov.id === this.props.movieId
         })[0];
-        this.setState({ currentState });
+        this.setState({currentState});
     }
 
     backToHomeHandler = () => {
-        ReactDOM.render(<Home />, document.getElementById('root'));
+        ReactDOM.render(<Home/>, document.getElementById('root'));
     }
 
     artistClickHandler = (url) => {
@@ -66,14 +66,13 @@ class Details extends Component {
             let starNode = star;
             if (star.id <= id) {
                 starNode.color = "yellow"
-            }
-            else {
+            } else {
                 starNode.color = "black";
 
             }
             starIconList.push(starNode);
         }
-        this.setState({ starIcons: starIconList });
+        this.setState({starIcons: starIconList});
     }
 
     render() {
@@ -87,7 +86,7 @@ class Details extends Component {
         }
         return (
             <div className="details">
-                <Header />
+                <Header showBookShowButton="true"/>
                 <div className="back">
                     <Typography onClick={this.backToHomeHandler}>
                         &#60; Back to Home
@@ -95,13 +94,13 @@ class Details extends Component {
                 </div>
                 <div className="flex-containerDetails">
                     <div className="leftDetails">
-                        <img src={movie.poster_url} alt={movie.title} />
+                        <img src={movie.poster_url} alt={movie.title}/>
                     </div>
                     <div className="middleDetails">
                         <div>
                             <Typography variant="headline" component="h2">{movie.title} </Typography>
                         </div>
-                        <br />
+                        <br/>
                         <div>
                             <Typography>
                                 <span className="bold">Genres: </span> {movie.genres.join(', ')}
@@ -110,13 +109,16 @@ class Details extends Component {
                                 <Typography><span className="bold">Duration:</span> {movie.duration} </Typography>
                             </div>
                             <div>
-                                <Typography><span className="bold">Release Date:</span> {new Date(movie.release_date).toDateString()} </Typography>
+                                <Typography><span
+                                    className="bold">Release Date:</span> {new Date(movie.release_date).toDateString()}
+                                </Typography>
                             </div>
                             <div>
                                 <Typography><span className="bold"> Rating:</span> {movie.critics_rating}  </Typography>
                             </div>
                             <div className="marginTop16">
-                                <Typography><span className="bold">Plot:</span> <a href={movie.wiki_url}>(Wiki Link)</a> {movie.storyline} </Typography>
+                                <Typography><span className="bold">Plot:</span> <a href={movie.wiki_url}>(Wiki
+                                    Link)</a> {movie.storyline} </Typography>
                             </div>
                         </div>
                         <div className="trailerContainer">
@@ -154,7 +156,7 @@ class Details extends Component {
                                         className="gridTile"
                                         onClick={() => this.artistClickHandler(artist.wiki_url)}
                                         key={artist.id}>
-                                        <img src={artist.profile_url} alt={artist.first_name + " " + artist.last_name} />
+                                        <img src={artist.profile_url} alt={artist.first_name + " " + artist.last_name}/>
                                         <GridListTileBar
                                             title={artist.first_name + " " + artist.last_name}
                                         />

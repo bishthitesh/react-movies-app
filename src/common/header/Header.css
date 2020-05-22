@@ -24,7 +24,6 @@
     margin-bottom: 20px;
 }
 
-
 .dispNone {
     display: none;
 }
@@ -35,4 +34,9 @@
 
 .red {
     color: red;
+}
+
+.bookshow-button {
+    float: right;
+    margin-right: 8px;
 }
