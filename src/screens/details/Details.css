@@ -37,7 +37,6 @@
 }
 
 .black {
-    color: none;
     cursor: pointer;
 }
 
@@ -54,6 +53,7 @@
     margin-top: 8px;
     margin-bottom: 0px;
     height: 24px;
+    cursor: pointer;
 }
 
 .flex-containerDetails {
